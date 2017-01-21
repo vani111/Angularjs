@@ -1,0 +1,65 @@
+Code gets complex because of Lack of high cohesion and loose coupling.
+1.low cohesion:a single function doing many different things (methods with different functionalities)
+  how well one thing stick to doing just one thing is high cohesion
+2.tight coupling-change in one functionality impacts the other functionality and it also needs to be changes
+
+
+ex:low cohesion a signle function doing 3 completely unrelated things
+ex:tight coupling html,js
+chnage in html makes chnage in js code js and html depend more on each other.
+
+
+one of the design patterns is
+Mode_view-ViewModel
+ Model:represemts and holds raw data
+       some of the data in some of the forms may be displayed in view
+       can also contain logic to get the data from source(ex:AJAX call,http call)
+       but contains no logic associated with displaying the model
+View:represents the data display
+     no presentation logic.never changes data
+     broadcasts events but does not handle them :if an event occurs where it should go only not handling it
+     html,css
+
+ViewModel:presentation logic
+          never directly asks the view to display anything
+          hold the data displayed in the view
+          responds to the view events
+          call other functionality for business logc processing
+          never maipluates DOM dorectly
+Declarative binding binds the view to view Model
+
+AngularJS is not restricted to View ViewModel Model design pattern
+it can be View whatever Model  pattern
+Angular JS attributes and functions:
+ng-app,ng-controller,ng-model,
+angular.module(<modulenam>,array of dependencies)
+controller(<controllername>,function which deals with functionality of controller)
+$scope object will expose  all the values to html view.
+
+"use strict" helps us in avoiding mistakes.
+for example if we skip "var" for variable decalration inside function that becomes global automatically,
+but if we use use strict,it doesnot make global but gives the variable undefined error.
+
+behind how Angular JS works is:
+using the Js functions
+document.querySelector("[ng-app]")-->the element with the attribute ng-app
+document.querySelector("[ng-contorller]")-->the element with ng-controller attribute
+
+document.querySelector("[ng-app]").getAttribute("ng-app") gives the value of the attribute ng-app.
+
+
+HTML 5 introdyuced custom attribues:    data-
+but for ANgular js ng-<> is fine.
+
+
+$scope is an object instantiated by Angular Js and given controller gets it by
+ Dependency I jectiom which is a design pttern that implements inversion of controller
+ client gets called (instantiation of scope)by some other system called ANgular js
+
+
+ $inject is a service that injects the scope into controller
+ so if we console.log(<DICOntrollerfunction name>) gives the function defintion which performs
+  the functionality of the controller
+  console.log($injector.annotate(<DICOntrollerfunction name>))
+  gives
+  [$scope,$filter,$injector]

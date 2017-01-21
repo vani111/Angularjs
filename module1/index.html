@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<meta charset=utf-8>
+<title>Assignment1</title>
+<script src=../js/angular.min.js></script>
+<script src=../js/module1.js></script>
+
+</head>
+<body ng-app='LunchCheck'>
+  <div ng-controller=LunchCheckController>
+
+    <div><input ng-model=lunch type=text placeholder="Enter the comma separated lunchmenu">WE do not conside empty items as item for ex:, , will not be treated as item<br>
+    <button ng-click=checkIfTooMuch()>Check if Too Much</button><br>
+  </div>
+  <div>
+    <input type=textarea ng-model=output>
+  </div>
+  </div>
+
+</body>
+
+</html>

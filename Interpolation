@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head>
+<meta charset=utf-8>
+<title>Interpolation example</title>
+
+</head>
+<body ng-app=InterpolationApp>
+<h1>Expressions,Interpolations</h1>
+<div ng-controller=ControllerInter>
+{{name}}:has a message<br>
+{{sayMessage()}}</div>
+
+</body>
+</html>
